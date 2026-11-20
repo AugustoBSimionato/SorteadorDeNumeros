@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/configuracaoDeSorteioFragment"
-        android:name="com.dev.bernardoslailati.sorteadordenumeros.ConfiguracaoDeSorteioFragment"
+        android:name="com.example.sorteadordenumeros.ConfiguracaoDeSorteioFragment"
         android:label="fragment_configuracao_de_sorteio"
         tools:layout="@layout/fragment_configuracao_de_sorteio" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultadoSorteioFragment"
-        android:name="com.dev.bernardoslailati.sorteadordenumeros.ResultadoSorteioFragment"
+        android:name="com.example.sorteadordenumeros.ResultadoSorteioFragment"
         android:label="fragment_resultado_sorteio"
         tools:layout="@layout/fragment_resultado_sorteio" />
 </navigation>

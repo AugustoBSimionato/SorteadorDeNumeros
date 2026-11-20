@@ -1,4 +1,4 @@
-package com.dev.bernardoslailati.sorteadordenumeros
+package com.example.sorteadordenumeros
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +8,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
-import com.dev.bernardoslailati.sorteadordenumeros.databinding.ActivityMainBinding
+import com.example.sorteadordenumeros.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

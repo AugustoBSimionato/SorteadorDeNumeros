@@ -1,4 +1,4 @@
-package com.dev.bernardoslailati.sorteadordenumeros
+package com.example.sorteadordenumeros
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -37,14 +37,28 @@ class SorteioViewModel : ViewModel() {
     }
 
     fun drawNumbers() {
-        val drawNumbers = mutableListOf<Int>()
+        val from = minOf(_uiState.value.initialLimit, _uiState.value.finalLimit)
+        val to = maxOf(_uiState.value.initialLimit, _uiState.value.finalLimit)
+        val range = from..to
+        val rangeSize = to - from + 1
 
-        repeat(_uiState.value.drawAmountNumber) {
-            var number = Random.nextInt(_uiState.value.initialLimit, _uiState.value.finalLimit)
-            while (drawNumbers.contains(number) && !_uiState.value.shouldRepeatNumbers) {
-                number = Random.nextInt(_uiState.value.initialLimit, _uiState.value.finalLimit)
+        val drawNumbers = mutableListOf<Int>()
+        val shouldRepeat = _uiState.value.shouldRepeatNumbers
+
+        if (!shouldRepeat && _uiState.value.drawAmountNumber >= rangeSize) {
+            drawNumbers.addAll(range.shuffled().take(_uiState.value.drawAmountNumber))
+        } else if (!shouldRepeat) {
+            val available = range.toMutableList()
+            repeat(_uiState.value.drawAmountNumber) {
+                if (available.isNotEmpty()) {
+                    val index = Random.nextInt(available.size)
+                    drawNumbers.add(available.removeAt(index))
+                }
             }
-            drawNumbers.add(number)
+        } else {
+            repeat(_uiState.value.drawAmountNumber) {
+                drawNumbers.add(Random.nextInt(from, to + 1))
+            }
         }
 
         _uiState.value =

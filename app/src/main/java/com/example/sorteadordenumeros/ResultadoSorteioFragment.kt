@@ -1,4 +1,4 @@
-package com.dev.bernardoslailati.sorteadordenumeros
+package com.example.sorteadordenumeros
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import com.dev.bernardoslailati.sorteadordenumeros.databinding.FragmentResultadoSorteioBinding
+import com.example.sorteadordenumeros.databinding.FragmentResultadoSorteioBinding
 import kotlinx.coroutines.launch
 
 class ResultadoSorteioFragment : Fragment() {
@@ -19,8 +19,8 @@ class ResultadoSorteioFragment : Fragment() {
     private var _binding: FragmentResultadoSorteioBinding? = null
     private val binding get() = _binding!!
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

@@ -1,4 +1,4 @@
-package com.dev.bernardoslailati.sorteadordenumeros
+package com.example.sorteadordenumeros
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,8 +10,8 @@ import androidx.appcompat.content.res.AppCompatResources.getColorStateList
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
-import com.dev.bernardoslailati.sorteadordenumeros.databinding.FragmentConfiguracaoDeSorteioBinding
-import com.dev.bernardoslailati.sorteadordenumeros.databinding.FragmentResultadoSorteioBinding
+import com.example.sorteadordenumeros.databinding.FragmentConfiguracaoDeSorteioBinding
+import com.example.sorteadordenumeros.databinding.FragmentResultadoSorteioBinding
 import kotlin.random.Random
 
 class ConfiguracaoDeSorteioFragment : Fragment() {
@@ -21,8 +21,8 @@ class ConfiguracaoDeSorteioFragment : Fragment() {
     private var _binding: FragmentConfiguracaoDeSorteioBinding? = null
     private val binding get() = _binding!!
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 
